@@ -5,15 +5,6 @@ metadata:
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
-  ignoreDifferences:
-  - group: ''
-    kind: Secret
-    jsonPointers:
-      - /data
-  - group: ''
-    kind: Deployment
-    jsonPointers:
-      - /metadata/annotations/creation
 
 spec:
   project: default
@@ -32,3 +23,12 @@ spec:
     syncOptions:
       - CreateNamespace=true  
    
+  ignoreDifferences:
+  - group: ''
+    kind: Secret
+    jsonPointers:
+      - /data
+  - group: ''
+    kind: Deployment
+    jsonPointers:
+      - /metadata/annotations/creation
