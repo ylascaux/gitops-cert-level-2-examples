@@ -5,6 +5,12 @@ metadata:
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
+  ignoreDifferences:
+  - group: ''
+    kind: Secret
+    jsonPointers:
+      - /data
+
 spec:
   project: default
 
