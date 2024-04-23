@@ -28,6 +28,7 @@ spec:
     kind: Secret
     jsonPointers:
       - /data
-  - group: '*'
+  - group: 'apps'
     kind: Deployment
-    jsonPointers: /metadata/annotations/creation
+    jsonPointers:
+      - /metadata/annotations
