@@ -3,6 +3,11 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: simple-hpa
   namespace: example01
+  ignoreDifferences:
+  - group: apps
+    kind: Deployment
+    jsonPointers:
+    - /spec/replicas
 spec:
   maxReplicas: 8
   minReplicas: 3
